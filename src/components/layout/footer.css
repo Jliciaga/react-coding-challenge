@@ -1,0 +1,8 @@
+li {
+    list-style-type: none;
+}
+
+li + li:before {
+    content: " | ";
+    padding: 0 10px;
+}
