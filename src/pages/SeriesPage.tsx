@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Card } from "../components/ui";
+
 const url = new URL("../feed/sample.json", import.meta.url);
 
 export interface SeriesPageProps {}
@@ -50,7 +52,19 @@ const SeriesPage: React.FC<SeriesPageProps> = ({}): React.ReactElement => {
 
     return (
         <div>
-            <h1>Hello World - Series</h1>
+            <ol className="flex flex-wrap flex-row justify-start">
+                {series !== null ? (
+                    series.map((serie) => {
+                        return (
+                            <li className="inline-block whitespace-pre-wrap">
+                                <Card image={serie.images["Poster Art"].url} title={serie.title} key={serie.title} />
+                            </li>
+                        );
+                    })
+                ) : (
+                    <div>Loading...</div>
+                )}
+            </ol>
         </div>
     );
 };

@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Card } from "../components/ui";
+
 const url = new URL("../feed/sample.json", import.meta.url);
 
 export interface MoviesPageProps {}
@@ -48,7 +50,19 @@ const MoviesPage: React.FC<MoviesPageProps> = ({}): React.ReactElement => {
 
     return (
         <div>
-            <h1>Hello World - Movies</h1>
+            <ol className="flex flex-wrap flex-row justify-start">
+                {movies !== null ? (
+                    movies.map((movie) => {
+                        return (
+                            <li className="inline-block whitespace-pre-wrap">
+                                <Card image={movie.images["Poster Art"].url} title={movie.title} key={movie.title} />
+                            </li>
+                        );
+                    })
+                ) : (
+                    <div>Loading...</div>
+                )}
+            </ol>
         </div>
     );
 };

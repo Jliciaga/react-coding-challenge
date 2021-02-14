@@ -14,10 +14,10 @@ export interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = ({}): React.ReactElement => {
     return (
-        <footer className="fixed bottom-0 h-64 w-full bg-black">
+        <footer className="static bottom-0 h-64 w-full bg-black">
             <div className="flex flex-col">
                 <div>
-                    <ol className="flex text-white px-16 py-7">
+                    <ol id="links" className="flex text-white px-16 py-7">
                         <li>
                             <a>Home</a>
                         </li>
@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({}): React.ReactElement => {
                 <div className="text-white px-16">
                     <span>Copyright @ 2016 DEMO Streaming. All Rights Reserved.</span>
                 </div>
-                <div className="flex space-between items-center px-16 py-14">
+                <div className="flex space-between items-center px-16 pt-14 pb-2">
                     <div className="flex w-full">
                         <span>
                             <img className="h-8 pr-4" src={FacebookIcon} />

@@ -1,8 +1,8 @@
-li {
+#linkList {
     list-style-type: none;
 }
 
-li + li:before {
+#linkList + #linkList:before {
     content: " | ";
     padding: 0 10px;
 }
