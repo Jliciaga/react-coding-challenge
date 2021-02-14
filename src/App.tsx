@@ -3,7 +3,7 @@ import * as React from "react";
 import Routes from "./components/core/Routes";
 import Layout from "./components/layout/Layout";
 
-import "./styles/tailwind.css";
+import "./style.css";
 
 export interface AppProps {}
 

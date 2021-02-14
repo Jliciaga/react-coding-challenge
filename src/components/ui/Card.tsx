@@ -1,11 +1,19 @@
 import * as React from "react";
 
-export interface CardProps {}
+export interface CardProps {
+    image: ImageData;
+    title: string;
+}
 
-const Card: React.FC<CardProps> = ({}): React.ReactElement => {
+const Card: React.FC<CardProps> = ({ image, title }): React.ReactElement => {
     return (
         <div>
-            <h1>Hello World - Card</h1>
+            <div>
+                <img src={image} />
+            </div>
+            <div>
+                <h3>{title}</h3>
+            </div>
         </div>
     );
 };

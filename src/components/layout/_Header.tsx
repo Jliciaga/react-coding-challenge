@@ -4,8 +4,14 @@ export interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}): React.ReactElement => {
     return (
-        <div>
-            <h1>Hello World - Header</h1>
+        <div className="flex items-center justify-between">
+            <div>
+                <h1>Demo Streaming</h1>
+            </div>
+            <div>
+                <button>Login</button>
+                <button>Start your free trial</button>
+            </div>
         </div>
     );
 };

@@ -10,7 +10,7 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }): React.ReactElement => {
     return (
-        <div className="layout-container">
+        <div>
             <Header />
             <main>
                 <Page>{children}</Page>
