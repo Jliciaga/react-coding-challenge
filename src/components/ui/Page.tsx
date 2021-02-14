@@ -1,13 +1,21 @@
 import * as React from "react";
 
 import { ErrorBoundary } from "../core";
-
+import { TitleContext } from "../context";
 export interface PageProps {
-    label: string;
     children: React.ReactElement;
 }
 
-const Page: React.FC<PageProps> = ({ label, children }): React.ReactElement => {
+const Page: React.FC<PageProps> = ({ children }): React.ReactElement => {
+    const [label, setLabel] = React.useState("Titles");
+
+    const ctx = React.useContext(TitleContext);
+
+    React.useEffect(() => {
+        setLabel(ctx);
+        console.log(ctx);
+    }, [ctx]);
+
     return (
         <div className="min-h-screen">
             <div className="flex justify-items-start items-center h-14 bg-black">

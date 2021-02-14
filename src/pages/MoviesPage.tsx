@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { Card } from "../components/ui";
+import { Card, Page } from "../components/ui";
+import { TitleContext } from "../components/context";
 
 const url = new URL("../feed/sample.json", import.meta.url);
 
@@ -49,21 +50,29 @@ const MoviesPage: React.FC<MoviesPageProps> = ({}): React.ReactElement => {
     }, []);
 
     return (
-        <div>
-            <ol className="flex flex-wrap flex-row justify-start">
-                {movies !== null ? (
-                    movies.map((movie) => {
-                        return (
-                            <li className="inline-block whitespace-pre-wrap">
-                                <Card image={movie.images["Poster Art"].url} title={movie.title} key={movie.title} />
-                            </li>
-                        );
-                    })
-                ) : (
-                    <div>Loading...</div>
-                )}
-            </ol>
-        </div>
+        <TitleContext.Provider value="Movies">
+            <Page>
+                <div>
+                    <ol className="flex flex-wrap flex-row justify-start">
+                        {movies !== null ? (
+                            movies.map((movie) => {
+                                return (
+                                    <li className="inline-block whitespace-pre-wrap">
+                                        <Card
+                                            image={movie.images["Poster Art"].url}
+                                            title={movie.title}
+                                            key={movie.title}
+                                        />
+                                    </li>
+                                );
+                            })
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                    </ol>
+                </div>
+            </Page>
+        </TitleContext.Provider>
     );
 };
 

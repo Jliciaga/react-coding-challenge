@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import { Card } from "../components/ui";
+import { Card, Page } from "../components/ui";
+import { TitleContext } from "../components/context";
 
 const url = new URL("../feed/sample.json", import.meta.url);
 
@@ -51,21 +52,29 @@ const SeriesPage: React.FC<SeriesPageProps> = ({}): React.ReactElement => {
     }, []);
 
     return (
-        <div>
-            <ol className="flex flex-wrap flex-row justify-start">
-                {series !== null ? (
-                    series.map((serie) => {
-                        return (
-                            <li className="inline-block whitespace-pre-wrap">
-                                <Card image={serie.images["Poster Art"].url} title={serie.title} key={serie.title} />
-                            </li>
-                        );
-                    })
-                ) : (
-                    <div>Loading...</div>
-                )}
-            </ol>
-        </div>
+        <TitleContext.Provider value="Series">
+            <Page>
+                <div>
+                    <ol className="flex flex-wrap flex-row justify-start">
+                        {series !== null ? (
+                            series.map((serie) => {
+                                return (
+                                    <li className="inline-block whitespace-pre-wrap">
+                                        <Card
+                                            image={serie.images["Poster Art"].url}
+                                            title={serie.title}
+                                            key={serie.title}
+                                        />
+                                    </li>
+                                );
+                            })
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                    </ol>
+                </div>
+            </Page>
+        </TitleContext.Provider>
     );
 };
 
