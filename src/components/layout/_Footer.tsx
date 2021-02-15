@@ -8,7 +8,7 @@ import AppleStore from "../../assets/svg/store/app-store.svg";
 import GoogleStore from "../../assets/svg/store/play-store.svg";
 import MicrosoftStore from "../../assets/svg/store/windows-store.svg";
 
-import "./footer.css";
+import "./footer.scss";
 
 export interface FooterProps {}
 
@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({}): React.ReactElement => {
         <footer className="static bottom-0 h-64 w-full bg-black">
             <div className="flex flex-col">
                 <div>
-                    <ol id="links" className="flex text-white px-16 py-7">
+                    <ol className="links flex text-white px-16 py-7">
                         <li>
                             <a>Home</a>
                         </li>

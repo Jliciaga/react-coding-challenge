@@ -13,6 +13,7 @@ module.exports = {
         mode: "all",
         content: ["./src/**/*.html", "./src/**/*.liquid", "./src/js/**/*.js"],
     },
+    important: true,
     theme: {
         extend: {
             colors: {

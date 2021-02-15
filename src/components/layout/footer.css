@@ -1,8 +1,0 @@
-#linkList {
-    list-style-type: none;
-}
-
-#linkList + #linkList:before {
-    content: " | ";
-    padding: 0 10px;
-}

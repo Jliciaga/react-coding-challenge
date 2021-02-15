@@ -26,7 +26,6 @@ module.exports = merge(common, {
                         options: {
                             importLoaders: 2,
                             sourceMap: false,
-                            modules: true,
                         },
                     },
                     "postcss-loader",
@@ -54,7 +53,7 @@ module.exports = merge(common, {
     },
     performance: {
         hints: false,
-        maxEntryPointSize: 512000,
+        maxEntrypointSize: 512000,
         maxAssetSize: 512000,
     },
 });
